@@ -12,7 +12,9 @@
 #define __SRC_MAP_RENDER_H_INCLUDED__
 
 #include <glesly/render.h>
-#include <System/TimeOfDay.h>
+#include <System/TimeDelay.h>
+
+SYS_DECLARE_MODULE(DM_GLESLY);
 
 namespace Glesly
 {

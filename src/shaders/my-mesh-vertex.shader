@@ -1,4 +1,4 @@
-precision mediump float;
+precision highp float;
 
 uniform mat4 camera_matrix;
 uniform mat4 t0_matrix;

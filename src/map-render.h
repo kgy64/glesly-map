@@ -18,25 +18,13 @@ SYS_DECLARE_MODULE(DM_GLESLY);
 
 namespace Glesly
 {
-    class MapRender: public Glesly::Render
+    class MapRender: public Glesly::Render3D
     {
      protected:
-        MapRender(int width, int height);
-
-        Glesly::Transformation myTransform[4];
-
-        Shaders::UniformMatrix_ref<float, 4> myT1Matrix;
-        Shaders::UniformMatrix_ref<float, 4> myT2Matrix;
-        Shaders::UniformMatrix_ref<float, 4> myT3Matrix;
-        Shaders::UniformMatrix_ref<float, 4> myT4Matrix;
+        MapRender(Glesly::Render3D::RenderInfo & renderInfo, int width, int height);
 
      public:
         virtual ~MapRender();
-
-        inline Glesly::Transformation & GetTransform(unsigned index)
-        {
-            return myTransform[index];
-        }
 
      private:
         SYS_DEFINE_CLASS_NAME("Glesly::MapRender");

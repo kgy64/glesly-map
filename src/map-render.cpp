@@ -17,11 +17,8 @@
 
 using namespace Glesly;
 
-MapRender::MapRender(int width, int height):
-    myT1Matrix(*this, "t0_matrix", myTransform[0]),
-    myT2Matrix(*this, "t1_matrix", myTransform[1]),
-    myT3Matrix(*this, "t2_matrix", myTransform[2]),
-    myT4Matrix(*this, "t3_matrix", myTransform[3])
+MapRender::MapRender(Glesly::Render3D::RenderInfo & renderInfo, int width, int height):
+    Render3D(renderInfo, width, height)
 {
  SYS_DEBUG_MEMBER(DM_GLESLY);
 

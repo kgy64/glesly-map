@@ -1,38 +1,44 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
  * Project:     Glesly: my GLES-based rendering library
- * Purpose:     My render class for map mesh rendering
+ * Purpose:     My test class for map rendering
  * Author:      György Kövesdi (kgy@teledigit.eu)
  * Licence:     GPL (see file 'COPYING' in the project root for more details)
  * Comments:    
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-#ifndef __SRC_MAP_RENDER_H_INCLUDED__
-#define __SRC_MAP_RENDER_H_INCLUDED__
+#ifndef __SRC_MY_MAP_RENDER_H_INCLUDED__
+#define __SRC_MY_MAP_RENDER_H_INCLUDED__
 
-#include <glesly/render.h>
-#include <System/TimeDelay.h>
+#include <surface-render.h>
 
-SYS_DECLARE_MODULE(DM_GLESLY);
-
-namespace Glesly
+namespace Ducktor
 {
-    class MapRender: public Glesly::Render3D
+    class MapRender: public Glesly::SurfaceRender
     {
      protected:
-        MapRender(Glesly::Render3D::RenderInfo & renderInfo, int width, int height);
+        MapRender(Glesly::Render3D::RenderInfo & renderInfo);
+
+        virtual void Initialize(void);
+        virtual void Frame(const SYS::TimeDelay & frame_start_time);
 
      public:
         virtual ~MapRender();
+
+        static inline Glesly::RenderPtr Create(Glesly::Render3D::RenderInfo & renderInfo)
+        {
+            SYS_DEBUG_STATIC(DM_GLESLY);
+            return Glesly::RenderPtr(new MapRender(renderInfo));
+        }
 
      private:
         SYS_DEFINE_CLASS_NAME("Glesly::MapRender");
 
     }; // class MapRender
 
-} // namespace Glesly
+} // namespace Ducktor
 
-#endif /* __SRC_MAP_RENDER_H_INCLUDED__ */
+#endif /* __SRC_MY_MAP_RENDER_H_INCLUDED__ */
 
 /* * * * * * * * * * * * * End - of - File * * * * * * * * * * * * * * */

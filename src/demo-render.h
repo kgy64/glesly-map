@@ -27,10 +27,10 @@ namespace Ducktor
      public:
         virtual ~DemoRender_1();
 
-        static inline Glesly::RenderPtr Create(Glesly::Render3D::RenderInfo & renderInfo)
+        static inline Glesly::SurfaceRenderPtr Create(Glesly::Render3D::RenderInfo & renderInfo)
         {
             SYS_DEBUG_STATIC(DM_GLESLY);
-            return Glesly::RenderPtr(new DemoRender_1(renderInfo));
+            return Glesly::SurfaceRenderPtr(new DemoRender_1(renderInfo));
         }
 
      private:
@@ -50,10 +50,10 @@ namespace Ducktor
      public:
         virtual ~DemoRender_2();
 
-        static inline Glesly::RenderPtr Create(Glesly::Render3D::RenderInfo & renderInfo)
+        static inline Glesly::SurfaceRenderPtr Create(Glesly::Render3D::RenderInfo & renderInfo)
         {
             SYS_DEBUG_STATIC(DM_GLESLY);
-            return Glesly::RenderPtr(new DemoRender_2(renderInfo));
+            return Glesly::SurfaceRenderPtr(new DemoRender_2(renderInfo));
         }
 
      private:

@@ -18,9 +18,6 @@ DemoRender_1::DemoRender_1(Glesly::Render3D::RenderInfo & renderInfo):
     SurfaceRender(renderInfo)
 {
  SYS_DEBUG_MEMBER(DM_GLESLY);
-
- CameraSetNearPlane(1.0e2);
- CameraSetFarPlane(7.0e5);
 }
 
 DemoRender_1::~DemoRender_1()
@@ -31,10 +28,6 @@ DemoRender_1::~DemoRender_1()
 void DemoRender_1::Initialize(void)
 {
  SYS_DEBUG_MEMBER(DM_GLESLY);
-
- Glesly::ObjectList objs = GetObjectList();
-
- objs.Insert(DucktorMesh::Create(*this, 20)); // Budapest
 }
 
 void DemoRender_1::Frame(const SYS::TimeDelay & frame_start_time)
@@ -53,9 +46,6 @@ DemoRender_2::DemoRender_2(Glesly::Render3D::RenderInfo & renderInfo):
     SurfaceRender(renderInfo)
 {
  SYS_DEBUG_MEMBER(DM_GLESLY);
-
- CameraSetNearPlane(4.0e3);
- CameraSetFarPlane(4.0e7);
 }
 
 DemoRender_2::~DemoRender_2()
@@ -66,10 +56,6 @@ DemoRender_2::~DemoRender_2()
 void DemoRender_2::Initialize(void)
 {
  SYS_DEBUG_MEMBER(DM_GLESLY);
-
- Glesly::ObjectList objs = GetObjectList();
-
- objs.Insert(DucktorMesh::Create(*this, 21)); // Hungary
 }
 
 void DemoRender_2::Frame(const SYS::TimeDelay & frame_start_time)

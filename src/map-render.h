@@ -26,10 +26,10 @@ namespace Ducktor
      public:
         virtual ~MapRender();
 
-        static inline Glesly::RenderPtr Create(Glesly::Render3D::RenderInfo & renderInfo)
+        static inline Glesly::SurfaceRenderPtr Create(Glesly::Render3D::RenderInfo & renderInfo)
         {
             SYS_DEBUG_STATIC(DM_GLESLY);
-            return Glesly::RenderPtr(new MapRender(renderInfo));
+            return Glesly::SurfaceRenderPtr(new MapRender(renderInfo));
         }
 
      private:
